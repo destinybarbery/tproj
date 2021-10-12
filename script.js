@@ -6,8 +6,9 @@ let colorSelected;
 function addR() {
 
     alert("Clicked Add Row")
+    let grid = document.getElementById("grid");
+    
     if(numRows == 0 && numCols == 0){
-        let grid = document.getElementById("grid");
         let newRow = document.createElement("tr")
         let cell = document.createElement("td")
         initializeCell(cell)
@@ -21,8 +22,6 @@ function addR() {
     }
     else{
 
-
-        let grid = document.getElementById("grid");
         let newRow = document.createElement("tr");
 
         for(let i = 0; i < numCols; i++) {
@@ -30,41 +29,10 @@ function addR() {
             initializeCell(cell)
             cell.classList.add("uncolored");
             newRow.appendChild(cell);
+        }
     }
     grid.appendChild(newRow);
     numRows++;
-}
-
-}
 
 
-function addC() {
-
-    alert("Clicked Add Col")
-    if(numCols == 0 && numRows == 0){
-        let grid = document.getElementById("grid");
-        let all = document.querySelectorAll("tr");
-        let rowCounter = 0;
-        let cell = document.createElement("td");
-        initializeCell(cell)
-        all[rowCounter].appendChild(cell);
-        rowCounter++;
-    
-        numCols++;
-        numRows++
-}
-}
-
-    else{
-        let grid = document.getElementById("grid");
-        let all = document.querySelectorAll("tr");
-        let rowCounter = 0;
-
-        for(let i = 0; i < numRows; i++) {
-            let cell = document.createElement("td");
-            initializeCell(cell)
-            all[rowCounter].appendChild(cell);
-            rowCounter++;
-    }
-        numCols++;
 }
