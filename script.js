@@ -6,7 +6,7 @@ let colorSelected;
 function addR() {
 
     alert("Clicked Add Row")
-    if(numRows == 0){
+    if(numRows == 0 && numCols == 0){
         let grid = document.getElementById("grid");
         let newRow = document.createElement("tr")
         let cell = document.createElement("td")
@@ -22,14 +22,14 @@ function addR() {
     else{
 
 
-    let grid = document.getElementById("grid");
-    let newRow = document.createElement("tr");
+        let grid = document.getElementById("grid");
+        let newRow = document.createElement("tr");
 
-    for(let i = 0; i < numCols; i++) {
-        let cell = document.createElement("td");
-        initializeCell(cell)
-        cell.classList.add("uncolored");
-        newRow.appendChild(cell);
+        for(let i = 0; i < numCols; i++) {
+            let cell = document.createElement("td");
+            initializeCell(cell)
+            cell.classList.add("uncolored");
+            newRow.appendChild(cell);
     }
     grid.appendChild(newRow);
     numRows++;
@@ -41,18 +41,30 @@ function addR() {
 function addC() {
 
     alert("Clicked Add Col")
-    if(numCols == 0){
-
-    }
-    let grid = document.getElementById("grid");
-    let all = document.querySelectorAll("tr");
-    let rowCounter = 0;
-
-    for(let i = 0; i < numRows; i++) {
+    if(numCols == 0 && numRows == 0){
+        let grid = document.getElementById("grid");
+        let all = document.querySelectorAll("tr");
+        let rowCounter = 0;
         let cell = document.createElement("td");
         initializeCell(cell)
         all[rowCounter].appendChild(cell);
         rowCounter++;
+    
+        numCols++;
+        numRows++
+}
+}
+
+    else{
+        let grid = document.getElementById("grid");
+        let all = document.querySelectorAll("tr");
+        let rowCounter = 0;
+
+        for(let i = 0; i < numRows; i++) {
+            let cell = document.createElement("td");
+            initializeCell(cell)
+            all[rowCounter].appendChild(cell);
+            rowCounter++;
     }
-    numCols++;
+        numCols++;
 }
