@@ -6,7 +6,22 @@ let colorSelected;
 function addR() {
 
     alert("Clicked Add Row")
-    
+    if(numRows == 0){
+        let grid = document.getElementById("grid");
+        let newRow = document.createElement("tr")
+        let cell = document.createElement("td")
+        initializeCell(cell)
+        cell.classList.add("uncolored");
+        newRow.appendChild(cell);
+        grid.appendChild(newRow);
+        numRows++;
+        numCols++;
+        
+
+    }
+    else{
+
+
     let grid = document.getElementById("grid");
     let newRow = document.createElement("tr");
 
@@ -18,6 +33,7 @@ function addR() {
     }
     grid.appendChild(newRow);
     numRows++;
+}
 
 }
 
@@ -25,7 +41,9 @@ function addR() {
 function addC() {
 
     alert("Clicked Add Col")
+    if(numCols == 0){
 
+    }
     let grid = document.getElementById("grid");
     let all = document.querySelectorAll("tr");
     let rowCounter = 0;
