@@ -8,7 +8,7 @@ function addR() {
 
     alert("Clicked Add Row")
     
-    let mainGrid = document.getElementById("main-grid");
+    let mainGrid = document.getElementById("grid");
     let newRow = document.createElement("tr");
 
     for(let i = 0; i < amountofColumns; i++) {
@@ -27,7 +27,7 @@ function addC() {
 
     alert("Clicked Add Col")
 
-      let mainGrid = document.getElementById("main-grid");
+      let mainGrid = document.getElementById("grid");
     let allRows = document.querySelectorAll("tr");
     let rowCounter = 0;
 
