@@ -15,8 +15,9 @@ function addR() {
         cell.classList.add("uncolored");
         newRow.appendChild(cell);
         grid.appendChild(newRow);
-        numRows++;
-        numCols++;
+    
+    numRows++;
+    numCols++;
         
 
     }
