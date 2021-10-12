@@ -21,7 +21,7 @@ function addR() {
     for (var i = 0; i < numCols; i++) {
         // Add Cell 
         var newCell = row.insertCell(i);  
-        newCell.appendChild(newCell);
+        newCell.appendChild(numRows);
         newCell.onclick = function() {
             return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
         }
@@ -47,7 +47,7 @@ function addC() {
         for (var j=0; j < numRows; j++) {
             // Add Cell 
             var newCell = grid.rows[j].insertCell(i);  
-            newCell.appendChild(newCell);
+            newCell.appendChild(numCols);
             newCell.onclick = function() {
                 return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
             }
