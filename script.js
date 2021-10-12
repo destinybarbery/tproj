@@ -20,9 +20,8 @@ function addR() {
     // loop - columns
     for (var i = 0; i < numCols; i++) {
         // Add Cell 
-        var newCell = row.insertCell(i); 
-        var newText = document.createTextNode('CELL'); 
-        newCell.appendChild(newText);
+        var newCell = row.insertCell(i);  
+        newCell.appendChild(newCell);
         newCell.onclick = function() {
             return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
         }
@@ -47,9 +46,8 @@ function addC() {
         // inner loop - rows
         for (var j=0; j < numRows; j++) {
             // Add Cell 
-            var newCell = grid.rows[j].insertCell(i); 
-            var newText = document.createTextNode('CELL'); 
-            newCell.appendChild(newText);
+            var newCell = grid.rows[j].insertCell(i);  
+            newCell.appendChild(newCell);
             newCell.onclick = function() {
                 return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
             }
