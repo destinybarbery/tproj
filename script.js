@@ -11,14 +11,14 @@ function addR() {
     let mainGrid = document.getElementById("grid");
     let newRow = document.createElement("tr");
 
-    for(let i = 0; i < amountofColumns; i++) {
+    for(let i = 0; i < numCols; i++) {
         let cell = document.createElement("td");
         initializeCell(cell)
         cell.classList.add("uncolored");
         newRow.appendChild(cell);
     }
     mainGrid.appendChild(newRow);
-    amountofRows++;
+    numRows++;
 
 }
 
@@ -31,11 +31,11 @@ function addC() {
     let allRows = document.querySelectorAll("tr");
     let rowCounter = 0;
 
-    for(let i = 0; i < amountofRows; i++) {
+    for(let i = 0; i < numRows; i++) {
         let cell = document.createElement("td");
         initializeCell(cell)
         allRows[rowCounter].appendChild(cell);
         rowCounter++;
     }
-    amountofColumns++;
+    numCols++;
 }
